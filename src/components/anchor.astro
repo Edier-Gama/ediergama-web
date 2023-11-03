@@ -1,5 +1,6 @@
 ---
-const { content: content, query: query } = Astro.props;
+import { Image } from "astro:assets";
+const { content: content, query: query, image: image } = Astro.props;
 ---
 
 <a href={query}>{content}</a>
@@ -8,7 +9,10 @@ const { content: content, query: query } = Astro.props;
   a {
     margin-left: 30px;
     text-decoration: none;
-    color: black;
+    color: rgb(0, 0, 0);
+  }
+  img {
+    width: 30px;
   }
 
   a {

@@ -1,0 +1,49 @@
+---
+
+---
+
+<section>
+  <h1>Experience</h1>
+  <section class="cards-experience">
+    <div>
+      <h2>Bucvers</h2>
+    </div>
+  </section>
+</section>
+
+<style>
+  section {
+    position: relative;
+    top: 120px;
+    margin: 2.5%;
+  }
+  h1 {
+    font-size: 3rem;
+    font-family: "Gabarito";
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  @keyframes show {
+    from {
+      opacity: 0;
+      scale: 25%;
+    }
+
+    to {
+      opacity: 1;
+      scale: 100%;
+    }
+  }
+
+  .cards-experience {
+    view-timeline-name: --article;
+    view-timeline-axis: block;
+
+    animation-timeline: --article;
+    animation-name: show;
+
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+  }
+</style>

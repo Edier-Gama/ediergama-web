@@ -1,89 +1,70 @@
 ---
-import Anchor from "./anchor.astro";
-import { Image } from "astro:assets";
-import githubLogo from "../../public/images/github_logo.png";
-import linkedinLogo from "../../public/images/linkedin_logo.png";
+import Navbar from "./Navbar.astro";
+import SocialPill from "./SocialPill.astro";
+import GitHubIcon from "../components/icons/Github.astro"
+import LinkedInIcon from "../components/icons/LinkedIn.astro"
+import MailIcon from "../components/icons/Mail.astro"
 ---
 
 <header>
   <nav class="navbar">
-    <Anchor content="Experience" query="#experience" />
-    <Anchor content="About me" query="#about" />
-    <Anchor content="Studies" query="#studies" />
+    <Navbar/>
   </nav>
   <div id="social-media-links">
-    <img src={githubLogo.src} alt="logo de github" />
-    <a href="https://github.com/Edier-Gama">GitHub</a>
-    <img src={linkedinLogo.src} alt="logo de linkedin" />
-    <a href="https://linkedin.com/in/ediergama/">Linkedin</a>
-  </div>
   <section class="main_section">
-    <h1>Edier Santiago Gama</h1>
-    <h2>Software <b>Developer</b> especialized in <b>Web Development</b></h2>
-    <p>
-      Web Developer with <b>3 years of experience</b> working in personal
-      projects that includes all software cycle as / Desing / Development /
-      Testing / DevOps
-    </p>
+    <h1
+    class="text-gray-900 dark:text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+    >
+    I'm Edier Gama
+    <h1/>
+    <h2
+        class="text-xl lg:text-2xl text-balance max-w-[700px] text-black dark:text-white"
+      >
+        <span>+ 3 años de experiencia como desarrollador web independiente</span><span
+          class="text-yellow-800 dark:text-yellow-200"
+        >.
+          Diseñador Web y estudiante de Inteligencia Artificial</span
+        >
+        .<span class="text-red-800 dark:text-red-200">
+          De Bogotá, Colombia</span
+        >.
+        <span class="text-sky-800 dark:text-sky-200"
+          >Especializado en crear aplicaciones únicas.</span
+        >
+      </h2>
+      <div class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://linkedin.com/in/ediergama">
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/Edier-Gama">
+          <GitHubIcon class="size-4 md:size-6" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="ediersantiago7@gmail.com">
+          <MailIcon class="size-4 md:size-6" />
+          ediersantiago7@gmail.com
+        </SocialPill>
+      </div>
   </section>
 </header>
-
+ 
 <style>
-  @font-face {
-    font-family: "Gabarito";
-    src: url("../../font/Gabarito-VariableFont_wght.ttf");
-  }
-  nav {
-    position: absolute;
-    display: flex;
-    justify-content: left;
-  }
   h1 {
-    font-size: 4.5rem;
-    font-family: "Gabarito";
+    font-size: 3rem;
+    margin: 5px;
   }
-  b {
-    color: rgb(0, 90, 234);
-  }
-
   p {
     font-size: 1.2rem;
   }
   .main_section {
-    max-width: 70%;
-    margin: 2.5%;
+    max-width: 800px;
+    margin: 0 auto;
     margin-top: 10%;
+    margin-left: 5%;
   }
   #social-media-links {
     display: flex;
     justify-content: right;
-  }
-
-  a {
-    margin-left: 20px;
-    margin-right: 20px;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-  }
-  img {
-    width: 30px;
-    position: relative;
-    top: -5px;
-    right: -5px;
-  }
-
-  a {
-    transition:
-      0.5s,
-      color 0.1s;
-    -webkit-transition:
-      0.5s,
-      color 0.1s;
-    -moz-transition:
-      0.5s,
-      color 0.1s;
-  }
-  a:hover {
-    color: rgb(67, 67, 67);
   }
 </style>

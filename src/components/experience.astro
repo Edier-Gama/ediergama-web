@@ -1,49 +1,38 @@
 ---
-
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "2020 - 2022",
+    title: "Técnico en programación de software",
+    description:
+      "En el año 2020 realicé un técnico en programación de software con el SENA enfocado al desarrollo web. Fuí galardoando por entregar el mejor proyecto productivo SENA 2021. En dicha carrera aprendí HTML, CSS, Javascript, Python, Tailwind y PHP",
+    link: "https://www.linkedin.com/in/ediergama/overlay/1635508176461/single-media-viewer/?profileId=ACoAADmeY6EBsVgGbQmwJMmcmU3LzVNZaXD1MG4",
+  },
+  {
+    date: "2022 - Actualidad",
+    title: "Platzi - Autodidacta",
+    description:
+      "Durante +1 año he realizado 60 cursos de desarrollo y diseño web. Soy responsable del desarrollo de varios proyectos web como Todo Machine. Durante mi estudio en platzi he aprendido tecnologías como: NextJS, Express, MongoDB, SQL, Adobe",
+    link: 'https://www.linkedin.com/in/ediergama/details/certifications/'
+  }
+]
 ---
 
-<section>
-  <h1>Experience</h1>
-  <section class="cards-experience">
-    <div>
-      <h2>Bucvers</h2>
-    </div>
-  </section>
-</section>
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
 
 <style>
-  section {
+  ol {
     position: relative;
-    top: 120px;
-    margin: 2.5%;
-  }
-  h1 {
-    font-size: 3rem;
-    font-family: "Gabarito";
-  }
-  p {
-    font-size: 1.2rem;
-  }
-  @keyframes show {
-    from {
-      opacity: 0;
-      scale: 25%;
-    }
-
-    to {
-      opacity: 1;
-      scale: 100%;
-    }
-  }
-
-  .cards-experience {
-    view-timeline-name: --article;
-    view-timeline-axis: block;
-
-    animation-timeline: --article;
-    animation-name: show;
-
-    animation-range: entry 25% cover 50%;
-    animation-fill-mode: both;
+    top: 130px;
+    max-width: 800px;
+    margin: 0 auto;
   }
 </style>

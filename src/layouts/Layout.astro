@@ -12,8 +12,8 @@ import '@fontsource-variable/onest'
     <meta name="generator" content={Astro.generator} />
     <title>ediergama portfolio</title>
   </head>
-  <body>
-    <slot />
+  <body class="bottom-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#222a38,transparent)]">
+      <slot />
   </body>
 </html>
 <style is:global>
@@ -29,12 +29,12 @@ import '@fontsource-variable/onest'
 
   body {
     color: rgba(17, 17, 17, 0.9);
-    display: flex;
     flex-direction: column;
     min-height: 100vh;
     overscroll-behavior: none;
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
   }
 
   @media (prefers-reduced-motion: reduce) {

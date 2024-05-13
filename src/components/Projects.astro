@@ -25,25 +25,27 @@ const TAGS = {
 }
 const PROJECTS = [
   {
-    title: "Petroff Amshen Website",
+    title: "MyAutoCV",
     description:
-      "Rediseño para la página de la el bufete de abogados de Nueva York Petroff Amshen",
+      "MyAutoCV es una aplicación web que te permite crear un CV minimalista y descargarlo en PDF de manera rápida e intuitiva, está hecho con NextJS, TailwindCSS y Supabase para manejar las sesiones",
     github: "https://github.com/Edier-Gama/todo-machine?tab=readme-ov-file",
-    image: '/projects/petroff.png',
+    image: '/projects/autocv.png',
     tags: [TAGS.NEXT, TAGS.TAILWIND],
+    prev: 'https://myautocv.vercel.app'
   },
   {
-    title: "API Para un Ecommerce",
+    title: "La Velada del Año IV web",
     description:
-    "Esta API hecha con Express, MongoDB y Javascript es de uso público y funciona para consumir las típicas funcionalidades de un ecommerce en linea (CRUD)",
+    "Participé en un proyecto de código abierto para hacer la página web de el evento La Velada del Año IV de Ibai Llanos, junto a Midudev llegué a ser el 4to colaborador del proyecto",
     github: 'https://github.com/Edier-Gama/blockbuster?tab=readme-ov-file',
-    image: '/projects/api-project.jpg',
+    image: '/projects/laveladaweb.png',
     tags: [TAGS.NEXT, TAGS.TAILWIND],
+    prev: 'https://lavelada.es'
   },
 ]
 ---
 
-<section class="flex flex-col gap-y-16">
+<section class="flex flex-col gap-y-16 max-w-7xl">
   <h2
         class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
       >
@@ -51,13 +53,14 @@ const PROJECTS = [
         Proyectos
       </h2>
   {
-    PROJECTS.map(({ image, title, description, tags, github }) => (
-      <article>
-        <h3 class="text-2xl font-semibold text-yellow-600 dark:text-yellow-200 mb-2">
-          {title}
-        </h3>
-        <p class="text-lg mb-4 text-pretty">{description}</p>
-        <ul class="flex gap-x-2 flex-row mb-2">
+    PROJECTS.map(({ image, title, description, tags, github, prev }) => (
+      <article class="flex flex-wrap max-w-7xl m-auto justify-center">
+        <div class="flex flex-col">
+          <h3 class="text-2xl font-semibold text-yellow-600 dark:text-yellow-200 mb-2">
+            {title}
+          </h3>
+          <p class="text-lg mb-4 text-pretty max-w-sm">{description}</p>
+          <ul class="flex gap-x-2 flex-row mb-2">
           {tags.map((tag) => (
             <li>
               <span
@@ -69,19 +72,24 @@ const PROJECTS = [
             </li>
           ))}
         </ul>
-        <img
-          loading="lazy"
-          class="rounded shadow-2xl shadow-white/10"
-          src={image}
-          alt={`Captura de pantalla del proyecto ${image}`}
-        />
-        <footer class="flex gap-x-4 items-end justify-start mt-4">
-          
+        <footer class="flex gap-x-4 items-end justify-start mt-4">    
             <LinkButton href={github}>
               <GitHub class="size-6" />
               Ver código fuente
             </LinkButton>  
+            <LinkButton href={prev}>
+              <GitHub class="size-6" />
+              Ver página
+            </LinkButton>  
         </footer>
+        </div>
+        <img
+          width="400px"
+          loading="lazy"
+          class="rounded shadow-2xl shadow-white/10 m-5"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${image}`}
+        />
       </article>
     ))
   }
